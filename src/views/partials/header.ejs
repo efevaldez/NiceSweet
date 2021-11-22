@@ -1,0 +1,144 @@
+<header>
+    <div class="header-menu">
+        <a href="/">
+            <div class="logo-header">
+                <img src="/images/logo.jpeg" alt="">
+            </div>
+        </a>
+    
+    <i class="fas fa-bars burguer-menu-icon" onclick="dropMenu()"></i>
+    
+    <!-- Menú de navegación mobile-->
+    <nav class="navigation-bar" id="navigation-bar-mobile">
+        
+        <div class="user-icons-mobile">
+            <a href="/users/login"><i class="fas fa-user"></i></a>
+        </div> 
+        
+        <!-- Lista con los elementos del menú (categorías) -->
+        <ul class="menu-contenedor">
+            <li class="dropdown-menu li-desplegable" onclick="dropSubCategoryMenu(`choco`)">
+                Golosinas
+                <i class="fas fa-chevron-down" ></i>
+            </li>
+            <li class="dropdown-menu li-desplegable"><a href="#promo">Promociones</a></i>
+            </li>
+            <li class="dropdown-menu li-desplegable"><a href="/us">Nosotros</a></li>
+            <li><a href="/contacto">Contacto</a></li>
+        </ul>
+    </nav> 
+    
+      <!-- Menú de navegación desktop ********** -->
+    <nav class="navigation-bar" id="navigation-bar-desktop">
+    <!-- Lista con los elementos del menú (categorías) -->
+        <ul class="menu-contenedor">
+            <li class="menu-desplegable li-desplegable" onclick="dropSubCategoryMenu(`choco`)">
+                <a href="/products">Golosinas</a>
+                <i class="fas fa-chevron-down" ></i>
+            </li>
+            
+            <li class="menu-desplegable li-desplegable"><a href="#promo">Promociones</a></li>
+            <li class="menu-desplegable li-desplegable"><a href="/us">Nosotros</a></li>
+            <li><a href="/contact">Contacto</a></li>
+        </ul>
+    </nav> 
+    
+    <!-- Icono del buscador en header mobile -->
+    <div class="search-icon" onclick="dropSearch()">
+        <i class="fas fa-search"></i>
+    </div>
+    
+    <!-- Buscador escritorio -->
+    <form action="/products/search" method="GET" class="search-form-desktop">
+        <div class="search-bar">
+            <input type="search" name="busqueda" id="">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+    </form>
+
+    <!-- Login/register/admin version desktop -->
+    <% if (locals.user) { %>
+        <div class="user-contenedor">
+            <p class="menu-inicio nameProfile"><a href="/users/profile"><%= locals.user.name %> </a></p>
+            <div class="circulo" onclick="dropLogin()">
+                <img src="/images/users/<%= user.avatar %>" alt="">
+            </div>
+            <a href="/products/cart"><i class="fas fa-shopping-cart icono-cart"></i></a>
+            <div class="menu-usuario" id="login-registro">
+                <a href="/users/profile"><p>Perfil</p></a>
+                <% if(locals.user.rol == "1") {%> 
+                    <a href="/admin"><p>Admin</p></a>
+                <% } %> 
+                <a href="/users/logout"><p >Cerrar sesión</p></a>
+            </div>
+        </div>
+
+     <%  } else { %>     
+    <div class="user-contenedor">
+        <p class="menu-inicio"><a href="/users/login">Iniciar Sesion</a></p>
+        <p class="menu-registro"><a href="/users/register">Registrarse</a></p>
+    </div>  
+    <% } %>
+
+    <!-- Menu desplegable de loging/register -->
+
+    
+    
+    </div>
+    
+    <nav class="nav_menu">        
+    <!-- Buscador mobile -->
+    
+    <form action="/products/search" method="GET" class="search-form-mobile" id="search">
+        <div class="search-bar">
+            <input type="search" name="busqueda" id="" placeholder="Buscar">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+    </form>
+    
+    <!-- Subcategorias desplegables -->
+    
+    <div class="subcategory_menu" id="choco">
+        <div class="subcategory_header"><h3><a href="/products">GOLOSINAS</a></h3><img src="/images/close.png" onclick="closeWindow()" alt=""></div>
+        <ul>
+            <li><a href="/products/categories/1">Chocolates</a></li>
+            <li><a href="/products/categories/2">Alfajores</a></li>
+            <li><a href="/products/categories/3">bombones</a></li>
+        </ul>
+      
+    </div>
+    
+
+    <div class="subcategory_menu" id="login-registro">
+        <div class="subcategory_header"><h3>USUARIO</h3><img src="/images/close.png" onclick="closeWindow()" alt=""></div>
+        <ul>
+            <li><a href="/users/login">Login</a></li>
+            <li><a href="/users/register">Register</a></li>
+        </ul>
+    </div>
+
+    <nav class="nav_menu">
+
+        <!-- Buscador mobile -->
+        <form action="/index/search" class="search-form-mobile" id="search">
+            <div class="search-bar">
+                <input type="search" name="search" id="" placeholder="Buscar">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </form>
+
+        <!-- Subcategorias desplegables -->
+        <div class="subcategory_menu" id="school">
+            <div class="subcategory_header">
+                <h3>GOLOSINAS</h3><img src="/images/close.png" onclick="closeWindow()" alt="">
+            </div>
+            <ul>
+                <li><a href="">Alfajores</a></li>
+                <li><a href="">Chocolates</a></li>
+            </ul>
+        </div>
+    </nav>
+
+</header>
+
+<script src="/Js/header.js" defer></script>

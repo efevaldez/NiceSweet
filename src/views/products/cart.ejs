@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head') %>
+
+  <link rel="stylesheet" href="/styles/productCart.css">
+  <title>Carrito de compras</title>
+
+  <body>
+    <%- include('../partials/header') %>
+      <main>
+        <form action="" method="POST">
+          <div>
+
+            <!-- Tabla 1 -->
+            <section class="tabla1 newsize">
+              <table class="tablas">
+                <thead>
+                  <tr>
+                    <th class="princi color">Producto</td>
+                  </tr>
+                  <tr>
+                    <td class="princi text">Nombre</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th class="color">Precio</th>
+                    <th class="canti color">Cantidad</th>
+                    <th class="color">Total</th>
+                  </tr>
+                  <tr>
+                    <td><input type="number"></td>
+                    <td class="canti">
+                      <button type="button" value="-">-</button>
+                      <input class="type2" type="number">
+                      <button type="button" value="+">+</button>
+                    </td>
+                    <td><input type="number"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <div class="btnProduct">
+              <button href="">Agregar otro producto</button>
+            </div>
+            <section class="tabla1">
+              <table>
+                <thead>
+                  <tr>
+                    <th class="canti order color">
+                      <p class="chikita">Total de productos</p><input class="type2" type="number">
+                    </td>
+                    <th class="canti order color">
+                      <p class="chikita">Precio final</p><input class="type2" type="number">
+                    </td>
+                  </tr>
+                </thead>
+              </table>
+            </section>
+
+            <!-- Tabla 2 -->
+            <section class="tabla2">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Subtotal</td>
+                    <th>Precio de envío</td>
+                    <th>
+                      <p>Descuento</p><input class="type2" type="number">%</td>
+                    <th>Agregar cupon</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><input type="number"></td>
+                    <td><input type="number"></td>
+                    <td><input type="number"></td>
+                    <td><input type="number"></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="btnFinal">
+                <button type="submit">Finalizar compra</button>
+              </div>
+            </section>
+          </div>
+        </form>
+      </main>
+      <%- include('../partials/footer') %>
+  </body>
+
+</html>

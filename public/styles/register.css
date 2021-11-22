@@ -1,0 +1,108 @@
+:root {
+  --color-lightBlue: #73a1dd;
+  --color-dark-x: #474b52;
+  --color-dark-xx: #acbddf;
+  --color-light: #ffffff;
+  --color-grey: #f5f6f8;
+}
+
+/* General */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  
+}
+.font-weight-bold {
+  font-weight: 700!important;
+  color: #ffff;
+}
+
+.register a {
+  color: black;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+
+.contenedorMain {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  background-color: var(--color-grey);
+  color: var(--color-light);
+  letter-spacing: .05rem;
+}
+
+.bg-light {
+  background-color: var(--color-light)!important;
+}
+
+.bg-dark {
+  background-color: var(--color-lightBlue)!important;
+}
+
+.p-6 {
+  padding: 4rem 7rem;
+}
+
+.contact-box {
+  padding: 3rem;
+}
+
+.btn {
+  font-weight: 400;
+  padding: 1rem 2rem;
+  border-radius: 5rem;
+  min-width: 10rem;
+}
+
+.btn-outline-dark {
+  border: 2px solid var(--color-dark-xx);
+}
+
+
+.form-control {
+  background-color: var(--color-dark-xx);
+  border: 2px solid var(--color-dark-xx);
+  border-radius: .2rem;
+  padding: 1.5rem 1rem;
+}
+
+
+.register-bg {
+  background-image: url('/images/cocoa.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.testiomonial {
+  bottom: 10px
+}
+
+
+
+@media (max-width: 575.98px) {
+  .p-6 {
+      padding: 2rem;
+  }
+
+  .contact-box {
+      padding: 0;
+  }
+
+  .width-100 {
+      width: 100%;
+  }
+}
+
+@media (max-width: 1200px) { 
+  .register-bg {
+      min-height: 50vh;
+  }
+}

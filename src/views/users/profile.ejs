@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head.ejs') %> 
+<link rel="stylesheet" href="/styles/editProfile.css">  
+<body>
+<%- include('../partials/header.ejs') %> 
+        
+<!-- fin del header -->
+<main>
+    <form action="/users/save/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <section class="perfil-usuario">
+            <div class="contenedor-perfil">
+                <div id="img-preview2">
+                </div>
+                <div id="portadaId" class="portada-perfil" style="background-image: url('/images/users/<%= user.portada%>');">
+
+                    <div class="sombra"></div>
+                    <div class="avatar-perfil">
+                        <div class="img-container" id="img-preview">
+                        </div>
+                        <img src="/images/users/<%= user.avatar %> "  alt="img">
+                        <div class="cambiar-foto" id="div_file">
+                                <i class="fas fa-camera"></i> 
+                                <input id="btn_enviar" type="file" name="avatar" multiple>
+                        </div>
+                    </div>
+                    <div class="datos-perfil">
+                        <h4 class="titulo-usuario"><%= user.name.toUpperCase() %></h4>
+                    </div>
+                    <div class="opcciones-perfil">
+                        <input type="file" name="portada" id="btn_enviar2" class="file-select src-file1" >
+                        <button type="submit">Guardar Cambios</button>
+                    </div>
+                </div>
+        </section>
+        <span id="fileErrors"></span>
+    </form>
+    
+    <div class="menu-perfil">
+        <h3>Informacion Personal</h3>
+        <ul>
+            <li>NOMBRE: <%= user.name %> </li>
+            <li>APELLIDO: <%= user.lastName %> </li>
+            <li>MAIL: <%= user.email %></li>
+            <li>CELULAR: <%= user.phone %></li>
+            <li>PROVINCIA: ------</li>
+            <li>LOCALIDAD: ------</li>
+        </ul>
+    </div>
+    
+    <script src="/Js/perfileJs.js"></script>
+    <!-- <script src="/Js/perfileJs2.js"></script> -->
+</main>
+<%- include('../partials/footer.ejs') %> 
+</body>
+</html>
